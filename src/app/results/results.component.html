@@ -1,0 +1,26 @@
+<app-header></app-header>
+<br>
+<div id="topDiv">
+    <strong>Select the exam: </strong>
+    <select id="examselect" [(ngModel)]="detailid">
+        <option *ngFor="let detail of details" [value]="detail._id">
+            {{detail.examName}}
+        </option>
+    </select>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary btn-sm" (click)="showData()">Show Marks</button>
+</div>
+<br>
+<div>
+    <table class="table table-primary table-borderless" id="markTable">
+        <tr class="row text-center">
+            <td class="col" *ngFor="let name of nameOfSub">
+                {{name}}
+            </td>
+        </tr>
+        <tr class="row text-center">
+            <td class="col" *ngFor="let mark of markOfSub">
+                {{mark}}
+            </td>
+        </tr>
+    </table>
+</div>

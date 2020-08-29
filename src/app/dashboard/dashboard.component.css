@@ -1,0 +1,12 @@
+#dashmaindiv{
+    background-color: #e5e5e5;
+}
+#dashcardbody{
+    height: 200px;
+    max-height: 250px;
+    overflow: auto;
+}
+#cardrow{
+    text-align: center;
+}
+

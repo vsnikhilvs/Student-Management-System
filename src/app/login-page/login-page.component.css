@@ -1,0 +1,17 @@
+.card-signin{
+    border-radius: 15px;
+    border-color: #4285F4;
+    border-width: 2px;
+    width: 430px;
+}
+.form-control:focus {
+    border-color: #4285F4;
+    box-shadow: 1px 1px 4px #4285F4;
+}
+.title{
+    text-align: center;
+    display: block;
+    font-size: 1.5rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #4285F4;
+}

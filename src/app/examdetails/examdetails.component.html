@@ -1,0 +1,117 @@
+<app-header></app-header>
+<div class="card m-3">
+    <h5 class="card-header">Please complete the fields to submit the marks</h5>
+    <div class="card-body">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="form-row">
+                <div class="form-group col-3">
+                    <label>Name of Exam</label>
+                    <select formControlName="examName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.examName.errors }">
+                        <option value="First Term">First Term</option>
+                        <option value="Mid Term">Mid Term</option>
+                        <option value="Second Term">Second Term</option>
+                        <option value="Annual">Annual</option>
+                        <option value="Custom">Custom</option>
+                    </select>
+                    <div *ngIf="submitted && f.examName.errors" class="invalid-feedback">
+                        <div *ngIf="f.examName.errors.required">Exam Name is required</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row" id="insideDiv">
+                <div class="form-group col-2">
+                    <span class="p-float-label">
+                        <input pInputText type="text" formControlName="noofsub" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.noofsub.errors }" />
+                        <label>Number of Subjects</label>
+                    </span>
+                    <div *ngIf="submitted && f.noofsub.errors" class="invalid-feedback">
+                        <div *ngIf="f.noofsub.errors.required">Number of Subjects is required</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group" id="insideDiv">
+                <div class="form-row">
+                    <div class="form-group col-2">
+                        <span class="p-float-label">
+                            <input pInputText type="text" formControlName="nos1" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nos1.errors }" />
+                            <label>Name of Subject 1</label>
+                        </span>
+                        <div *ngIf="submitted && f.nos1.errors" class="invalid-feedback">
+                            <div *ngIf="f.nos1.errors.required">Name of Subject 1 is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group col-1">
+                        <span class="p-float-label">
+                            <input pInputText type="text" formControlName="mos1" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mos1.errors }" />
+                            <label>Mark</label>
+                        </span>
+                        <div *ngIf="submitted && f.mos1.errors" class="invalid-feedback">
+                            <div *ngIf="f.mos1.errors.required">Mark for Subject 1 is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group col-2">
+                        <span class="p-float-label">
+                            <input pInputText type="text" formControlName="nos2" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nos2.errors }" />
+                            <label>Name of Subject 2</label>
+                        </span>
+                        <div *ngIf="submitted && f.nos2.errors" class="invalid-feedback">
+                            <div *ngIf="f.nos2.errors.required">Name of Subject 2 is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group col-1">
+                        <span class="p-float-label">
+                            <input pInputText type="text" formControlName="mos2" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mos2.errors }" />
+                            <label>Mark</label>
+                        </span>
+                        <div *ngIf="submitted && f.mos2.errors" class="invalid-feedback">
+                            <div *ngIf="f.mos2.errors.required">Mark for Subject 2 is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group col-2">
+                        <span class="p-float-label">
+                            <input pInputText type="text" formControlName="nos3" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nos3.errors }" />
+                            <label>Name of Subject 3</label>
+                        </span>
+                        <div *ngIf="submitted && f.nos3.errors" class="invalid-feedback">
+                            <div *ngIf="f.nos3.errors.required">Name of Subject 3 is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group col-1">
+                        <span class="p-float-label">
+                            <input pInputText type="text" formControlName="mos3" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mos3.errors }" />
+                            <label>Mark</label>
+                        </span>
+                        <div *ngIf="submitted && f.mos3.errors" class="invalid-feedback">
+                            <div *ngIf="f.mos3.errors.required">Mark for Subject 3 is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group col-2">
+                        <span class="p-float-label">
+                            <input pInputText type="text" formControlName="nos4" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nos4.errors }" />
+                            <label>Name of Subject 4</label>
+                        </span>
+                        <div *ngIf="submitted && f.nos4.errors" class="invalid-feedback">
+                            <div *ngIf="f.nos4.errors.required">Name of Subject 4 is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group col-1">
+                        <span class="p-float-label">
+                            <input pInputText type="text" formControlName="mos4" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mos4.errors }" />
+                            <label>Mark</label>
+                        </span>
+                        <div *ngIf="submitted && f.mos4.errors" class="invalid-feedback">
+                            <div *ngIf="f.mos4.errors.required">Mark for Subject 4 is required</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center" style="float: right;">
+                <button pButton type="submit" class="p-button-raised p-button-rounded p-button-success" icon="pi pi-check" ></button>&nbsp;&nbsp;
+                <button pButton type="reset" class="p-button-raised p-button-rounded p-button-secondary" icon="pi pi-times" (click)="onReset()"></button>  
+            </div>
+        </form>
+    </div>
+</div>
